@@ -1,0 +1,49 @@
+WARNING:root:User 6070910226 tried to access information with different last name: тетяна голод
+WARNING:root:Пользователь 6070910226 попытался получить доступ к информации с другой фамилией: тетяна голод
+ERROR:root:Ошибка SQLite: no such column: admin
+ERROR:root:Ошибка при запуске бота: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
+ERROR:TeleBot:Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message must be non-empty
+ERROR:TeleBot:Exception traceback:
+Traceback (most recent call last):
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/util.py", line 93, in run
+    task(*args, **kwargs)
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/__init__.py", line 8404, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/bot.py", line 48, in handle_start
+    type_text(message.chat.id, "👋 Приветствую вас!")
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/bot.py", line 40, in type_text
+    bot.send_message(chat_id, char)
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/__init__.py", line 1742, in send_message
+    apihelper.send_message(
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/apihelper.py", line 270, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/apihelper.py", line 167, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimapytlyk/Desktop/Project_flaskBot/.venv/lib/python3.12/site-packages/telebot/apihelper.py", line 194, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message must be non-empty
+
+WARNING:root:Пользователь 6070910226 попытался получить доступ к информации с другой фамилией: Питлик Дмитро
+ERROR:root:Ошибка в обработчике команды /start: [Errno 2] No such file or directory: 'welcome_animation.gif'
+WARNING:root:Пользователь 6070910226 попытался получить доступ к информации с другой фамилией: Питлик Дмитро
+WARNING:root:Пользователь 6070910226 попытался получить доступ к информации с другой фамилией: Дмитро питлик
+ERROR:root:Ошибка при запуске бота: tuple index out of range
+WARNING:root:Пользователь 6070910226 попытался получить доступ к информации с другой фамилией: /info
+ERROR:root:Ошибка при запуске бота: tuple index out of range
+ERROR:root:Помилка SQLite: no such table: Пользователи
+ERROR:root:Помилка SQLite: no such table: Пользователи
+ERROR:root:Помилка SQLite: no such table: Користувачі
+ERROR:root:Помилка SQLite: no such table: Користувачі
+ERROR:root:Помилка SQLite: no such table: Користувачі
+ERROR:root:Помилка SQLite: no such table: Користувачі
+ERROR:root:Помилка SQLite: no such table: Користувачі
+ERROR:root:Ошибка SQLite: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 123145486987264 and this is thread id 123145503776768.
+WARNING:root:Пользователь 6070910226 попытался получить доступ к информации с другой фамилией: Дмитро Питлик
+ERROR:root:Ошибка SQLite: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 123145503776768 and this is thread id 123145486987264.

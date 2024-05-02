@@ -1,0 +1,118 @@
+/* Основні стилі для сторінки */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Стилі для форм */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+button {
+    background-color: transparent; /* змінено */
+    color: #4CAF50;
+    padding: 10px 20px;
+    border: 1px solid #4CAF50; /* додано */
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #040404;
+    color: white;
+}
+
+/* Стилі для списку користувачів */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Медіазапит для мобільних пристроїв з шириною екрана до 768px */
+@media only screen and (max-width: 768px) {
+    /* Загальні стилі для всіх елементів */
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    /* Специфічні стилі для форми */
+    form {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select {
+        width: calc(100% - 20px);
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    input[type="submit"],
+    button {
+        padding: 8px 16px;
+    }
+
+    /* Специфічні стилі для списку користувачів */
+    ul li {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+}

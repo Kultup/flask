@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система управління користувачами</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Система управління користувачами</h1>
+    
+    <h2>Додати нового користувача</h2>
+    <form action="/add_user" method="post">
+        <label for="last_name">Прізвище:</label>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+
+        <label for="login">Логін:</label>
+        <input type="text" id="login" name="login" required><br><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="city">Місто:</label>
+        <select id="city" name="city" required>
+            <option value="">Виберіть місто</option>
+            {% for city in cities %}
+                <option value="{{ city[0] }}">{{ city[0] }}</option>
+            {% endfor %}
+        </select>
+        <label for="other_city">Інше місто:</label>
+        <input type="text" id="other_city" name="other_city" placeholder="Введіть інше місто"><br><br>
+
+        <input type="submit" value="Додати користувача">
+    </form>
+
+    <h2>Фільтрувати користувачів за містом</h2>
+    <form action="/" method="get">
+        <label for="filter_city">Фільтрувати за містом:</label>
+        <select id="filter_city" name="city">
+            <option value="">Всі міста</option>
+            {% for city in cities %}
+                <option value="{{ city[0] }}">{{ city[0] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Фільтрувати">
+    </form>
+
+    <h2>Список користувачів</h2>
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user[1] }} - {{ user[2] }} - {{ user[4] }} - {{ user[5] }}
+                <a href="/edit_user/{{ user[0] }}">Редагувати</a>
+                <form action="/delete_user/{{ user[0] }}" method="post" style="display: inline;">
+                    <button type="submit">Видалити</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

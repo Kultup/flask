@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагувати користувача</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Редагувати користувача</h1>
+    
+    <!-- Форма редагування даних користувача -->
+    <form action="" method="post">
+        <label for="last_name">Прізвище:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ user[1] }}" required><br><br>
+
+        <label for="login">Логін:</label>
+        <input type="text" id="login" name="login" value="{{ user[2] }}" required><br><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" value="{{ user[3] }}" required><br><br>
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" value="{{ user[4] }}" required><br><br>
+
+        <label for="city">Місто:</label>
+        <select id="city" name="city" required>
+            <option value="">Виберіть місто</option>
+            {% for city in cities %}
+                <option value="{{ city[0] }}" {% if user[5] == city[0] %}selected{% endif %}>{{ city[0] }}</option>
+            {% endfor %}
+        </select>
+        <label for="other_city">Інше місто:</label>
+        <input type="text" id="other_city" name="other_city" value="{{ user[5] }}" placeholder="Введіть інше місто"><br><br>
+
+        <!-- Приховане поле для передачі reg_number до вашого обробника Flask -->
+        <input type="hidden" name="reg_number" value="{{ user[6] }}">
+
+        <input type="submit" value="Оновити користувача">
+    </form>
+</body>
+</html>
